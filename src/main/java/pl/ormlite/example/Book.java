@@ -1,5 +1,6 @@
 package pl.ormlite.example;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -14,25 +15,25 @@ public class Book {
     public Book() {
     }
 
-    @DatabaseField(columnName = "TITTLE")
+    @DatabaseField(columnName = "TITTLE", canBeNull = false)
     private String tittle;
 
-    @DatabaseField(columnName = "DESCRIPTION")
+    @DatabaseField(columnName = "DESCRIPTION", dataType = DataType.LONG_STRING)
     private String description;
 
-    @DatabaseField(columnName = "ISBN")
+    @DatabaseField(columnName = "ISBN", unique = true)
     private String isbn;
 
     @DatabaseField(columnName = "ADDED_DATE")
     private Date addedDate;
 
-    @DatabaseField(columnName = "DATE_RELEASE")
+    @DatabaseField(columnName = "DATE_RELEASE", dataType = DataType.DATE_STRING, format = "yyyy-MM-DD")
     private Date dateRelease;
 
-    @DatabaseField(columnName = "RATING")
-    private int rating;
+    @DatabaseField(columnName = "RATING", width = 1)
+    private String rating;
 
-    @DatabaseField(columnName = "BORROWED")
+    @DatabaseField(columnName = "BORROWED", defaultValue = "false")
     private boolean borrowed;
 
     @DatabaseField(columnName = "PRICE")
@@ -70,14 +71,6 @@ public class Book {
         this.dateRelease = dateRelease;
     }
 
-    public Integer getRating() {
-        return rating;
-    }
-
-    public void setRating(Integer rating) {
-        this.rating = rating;
-    }
-
     public boolean isBorrowed() {
         return borrowed;
     }
@@ -102,7 +95,11 @@ public class Book {
         this.description = description;
     }
 
-    public void setRating(int rating) {
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
         this.rating = rating;
     }
 }
