@@ -41,9 +41,13 @@ public class Main {
         book.setBorrowed(true);
         book.setPrice(33.99);
 
-        Dao<Book, ?> dao = DaoManager.createDao(connectionSource, Book.class);
+        Dao<Book, Integer> dao = DaoManager.createDao(connectionSource, Book.class);
 
         dao.create(book);
+
+
+
+
         connectionSource.close();
     }
 }
