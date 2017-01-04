@@ -15,8 +15,11 @@ public class Book {
     public Book() {
     }
 
-    @DatabaseField(columnName = "TITTLE", canBeNull = false)
-    private String tittle;
+    @DatabaseField(generatedId = true)
+    private int id;
+
+    @DatabaseField(columnName = "TITLE", canBeNull = false)
+    private String title;
 
     @DatabaseField(columnName = "DESCRIPTION", dataType = DataType.LONG_STRING)
     private String description;
@@ -39,12 +42,12 @@ public class Book {
     @DatabaseField(columnName = "PRICE")
     private double price;
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getIsbn() {
@@ -101,5 +104,28 @@ public class Book {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", addedDate=" + addedDate +
+                ", dateRelease=" + dateRelease +
+                ", rating='" + rating + '\'' +
+                ", borrowed=" + borrowed +
+                ", price=" + price +
+                '}';
     }
 }
