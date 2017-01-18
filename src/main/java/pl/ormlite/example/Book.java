@@ -7,7 +7,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import java.util.Date;
 
 /**
- * Created by ZacznijProgramowac on 01.01.2017.
+ * Created by ZacznijProgramowac.
  */
 @DatabaseTable(tableName = "books")
 public class Book {
@@ -17,6 +17,9 @@ public class Book {
 
     @DatabaseField(generatedId = true)
     private int id;
+
+    @DatabaseField(columnName = "AUTHOR_ID", foreign = true)
+    private Author author;
 
     @DatabaseField(columnName = "TITLE", canBeNull = false)
     private String title;

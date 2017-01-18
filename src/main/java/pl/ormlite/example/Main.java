@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by ZacznijProgramowac on 20.12.2016.
+ * Created by ZacznijProgramowac.
  */
 public class Main {
 
