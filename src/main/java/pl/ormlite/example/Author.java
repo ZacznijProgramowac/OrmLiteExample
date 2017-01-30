@@ -18,4 +18,37 @@ public class Author {
 
     @ForeignCollectionField
     private ForeignCollection<Book> books;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ForeignCollection<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(ForeignCollection<Book> books) {
+        this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "\nid=" + id +
+                "\n name='" + name + '\'' +
+                "\n books=" + books +
+                '}';
+    }
 }

@@ -18,7 +18,7 @@ public class Book {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField(columnName = "AUTHOR_ID", foreign = true)
+    @DatabaseField(columnName = "AUTHOR_ID", foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true)
     private Author author;
 
     @DatabaseField(columnName = "TITLE", canBeNull = false)
@@ -117,18 +117,27 @@ public class Book {
         this.id = id;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", addedDate=" + addedDate +
-                ", dateRelease=" + dateRelease +
-                ", rating='" + rating + '\'' +
-                ", borrowed=" + borrowed +
-                ", price=" + price +
+                "\nid=" + id +
+                "\n author=" + author +
+                "\n title='" + title + '\'' +
+                "\n description='" + description + '\'' +
+                "\n isbn='" + isbn + '\'' +
+                "\n addedDate=" + addedDate +
+                "\n dateRelease=" + dateRelease +
+                "\n rating='" + rating + '\'' +
+                "\n borrowed=" + borrowed +
+                "\n price=" + price +
                 '}';
     }
 }
