@@ -9,8 +9,6 @@ import com.j256.ormlite.table.TableUtils;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by ZacznijProgramowac.
@@ -33,22 +31,9 @@ public class MainForeignFields {
         Dao<Author, Integer> daoAuthor = DaoManager.createDao(connectionSource, Author.class);
 
 
-        Author author = new Author();
-        author.setName("Tolkien");
-
+        Author author = DataCreator.author();
         //Pierwsza
-        Book book = new Book();
-        book.setTitle("Władca pierścieni");
-        book.setDescription(null);
-        book.setIsbn("11111");
-        book.setAddedDate(new Date());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        String dateInString = "2012/11/11";
-        Date date = sdf.parse(dateInString);
-        book.setDateRelease(date);
-        book.setRating("1");
-        book.setBorrowed(true);
-        book.setPrice(67.99);
+        Book book = DataCreator.firstBook();
 
         book.setAuthor(author);
         daoBook.create(book);
@@ -78,20 +63,7 @@ public class MainForeignFields {
         });
 
         //Wiedźmin
-        Book book3 = new Book();
-        book3.setTitle("Krew elfów");
-        book3.setDescription("Tutaj opis jest zbędny...");
-        book3.setIsbn("33333");
-        book3.setAddedDate(new Date());
-
-        SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy/MM/dd");
-        String dateInString3 = "2012/11/11";
-        Date date3 = sdf3.parse(dateInString3);
-
-        book3.setDateRelease(date3);
-        book3.setRating("1");
-        book3.setBorrowed(true);
-        book3.setPrice(33.99);
+        Book book3 = DataCreator.thirdBook();
 
         author.getBooks().add(book3);
         daoAuthor.createOrUpdate(author);

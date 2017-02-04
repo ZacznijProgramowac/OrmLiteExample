@@ -33,6 +33,19 @@
             <artifactId>h2</artifactId>
             <version>1.4.193</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1102.jdbc41</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>clojars.org</id>
+            <url>http://clojars.org/repo</url>
+        </repository>
+    </repositories>
 
 </project>
