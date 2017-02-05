@@ -1,4 +1,7 @@
-package pl.ormlite.example;
+package pl.ormlite.example.Utils;
+
+import pl.ormlite.example.Model.Author;
+import pl.ormlite.example.Model.Book;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

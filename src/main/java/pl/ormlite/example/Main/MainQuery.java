@@ -1,4 +1,4 @@
-package pl.ormlite.example;
+package pl.ormlite.example.Main;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -8,6 +8,8 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.stmt.UpdateBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import pl.ormlite.example.Model.Book;
+import pl.ormlite.example.Utils.DataCreator;
 
 import java.io.IOException;
 import java.sql.SQLException;
