@@ -1,5 +1,5 @@
 # OrmLiteExample
-Przykładody z kursu ORMLite
+Przykłady z kursu ORMLite
 
 Po więcej zapraszam na:
  * https://www.youtube.com/zacznijprogramowac
