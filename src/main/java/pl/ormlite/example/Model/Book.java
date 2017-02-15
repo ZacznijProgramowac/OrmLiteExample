@@ -8,9 +8,12 @@ import java.util.Date;
 
 /**
  * Created by ZacznijProgramowac.
+ * https://www.youtube.com/zacznijprogramowac
+ * http://zacznijprogramowac.net/
+ * https://www.facebook.com/zacznijprogramowac
  */
 @DatabaseTable(tableName = "books")
-public class Book {
+public class Book implements BaseModel {
 
     public Book() {
     }

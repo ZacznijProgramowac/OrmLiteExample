@@ -18,8 +18,11 @@ import java.util.List;
 
 /**
  * Created by ZacznijProgramowac.
+ * https://www.youtube.com/zacznijprogramowac
+ * http://zacznijprogramowac.net/
+ * https://www.facebook.com/zacznijprogramowac
  */
-public class MainQuery {
+public class MainQueryBuilder {
 
     public static void main(String[] args) throws SQLException, IOException, ParseException {
 
@@ -31,13 +34,8 @@ public class MainQuery {
         TableUtils.dropTable(connectionSource, Book.class, true);
         TableUtils.createTableIfNotExists(connectionSource, Book.class);
 
-        //Pierwsza
         Book book = DataCreator.firstBook();
-
-        //Druga
         Book book2 = DataCreator.secondBook();
-
-        //Wiedźmin
         Book book3 = DataCreator.thirdBook();
 
         Dao<Book, Integer> dao = DaoManager.createDao(connectionSource, Book.class);

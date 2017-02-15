@@ -14,9 +14,15 @@ import java.sql.SQLException;
 
 /**
  * Created by ZacznijProgramowac.
+ * https://www.youtube.com/zacznijprogramowac
+ * http://zacznijprogramowac.net/
+ * https://www.facebook.com/zacznijprogramowac
  */
 public class MainPostgresql {
 
+    /**
+     * Przykład implementacji z Postgresql
+     */
     public static void main(String[] args) throws SQLException, IOException {
         String url = "jdbc:postgresql://localhost:5432/ormlite";
         ConnectionSource connectionSource = new JdbcConnectionSource(url, "postgres", "root");

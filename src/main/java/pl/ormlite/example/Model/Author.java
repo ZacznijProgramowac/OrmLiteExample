@@ -7,9 +7,12 @@ import com.j256.ormlite.table.DatabaseTable;
 
 /**
  * Created by ZacznijProgramowac.
+ * https://www.youtube.com/zacznijprogramowac
+ * http://zacznijprogramowac.net/
+ * https://www.facebook.com/zacznijprogramowac
  */
 @DatabaseTable
-public class Author {
+public class Author implements BaseModel {
 
     @DatabaseField(generatedId = true)
     private int id;
