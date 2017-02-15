@@ -13,7 +13,7 @@ import java.util.Date;
  * https://www.facebook.com/zacznijprogramowac
  */
 @DatabaseTable(tableName = "books")
-public class Book implements BaseModel {
+public class Book {
 
     public Book() {
     }
